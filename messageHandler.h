@@ -29,9 +29,9 @@ private:
 public:
 
 messageHandler();
-void processACM(canFrame Frame);
-void handleACMCollisions(pair<int, long long> ACM);
-void extractECU(canFrame Frame);
+void processACM(canFrame& Frame);
+void handleACMCollisions(pair<int, long long>& ACM);
+void extractECU(canFrame& Frame);
 
 
 };

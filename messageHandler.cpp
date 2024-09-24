@@ -9,7 +9,7 @@ messageHandler::messageHandler(){
   
 }
 
-void messageHandler::processACM(canFrame Frame){
+void messageHandler::processACM(canFrame& Frame){
   
   extractECU(Frame);
 
@@ -27,7 +27,7 @@ void messageHandler::processACM(canFrame Frame){
   }
 }
 
-void messageHandler::handleACMCollisions(pair<int, long long> ACM){
+void messageHandler::handleACMCollisions(pair<int, long long>& ACM){
   // Handle collisions on same Source Address
 
   // Compare Current ECU at SA in map to ECU of current ACM.
@@ -42,7 +42,7 @@ void messageHandler::handleACMCollisions(pair<int, long long> ACM){
   
 }
 
-void messageHandler::extractECU(canFrame Frame){
+void messageHandler::extractECU(canFrame& Frame){
   int it = 0;
   for (auto x : Frame.DataBytes){
     CurrentECU += CurrentECU<<8*it;
